@@ -1,6 +1,6 @@
 # Dark Sudoku
 
-Chrome extension (Manifest V3) that adds a dark mode to [sudoku.com](https://sudoku.com/fr).
+Chrome extension (Manifest V3) that adds a dark mode to <a href="https://sudoku.com" target="_blank">sudoku.com</a>.
 
 ## How it works
 
@@ -14,7 +14,7 @@ Images and videos are re-inverted to keep their normal colors.
 1. Open `chrome://extensions` in Chrome.
 2. Enable **Developer mode** (toggle in the top right).
 3. Click **Load unpacked** and select this folder.
-4. Go to [sudoku.com/fr](https://sudoku.com/fr) — dark mode is on by default.
+4. Go to <a href="https://sudoku.com" target="_blank">sudoku.com</a> — dark mode is on by default.
 
 ## Usage
 
