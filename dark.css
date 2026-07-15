@@ -1,0 +1,30 @@
+/*
+ * La grille de sudoku.com est dessinée dans un <canvas>, donc impossible de la
+ * recolorer avec du CSS classique. On inverse toute la page (invert + hue-rotate
+ * pour conserver les teintes bleues), et on ré-inverse les médias pour qu'ils
+ * gardent leurs couleurs d'origine.
+ *
+ * Le fond de <html> doit rester BLANC : c'est le filtre qui le rend sombre.
+ * Toutes les règles sont scopées sous .dark-sudoku-on, posée par content.js.
+ */
+
+html.dark-sudoku-on {
+  filter: invert(0.92) hue-rotate(180deg) !important;
+  background: #ffffff !important;
+  color-scheme: dark;
+}
+
+/* Ré-inverse les médias pour qu'ils restent en couleurs normales */
+html.dark-sudoku-on img,
+html.dark-sudoku-on video,
+html.dark-sudoku-on picture,
+html.dark-sudoku-on iframe,
+html.dark-sudoku-on [class*="icon-flag"] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Évite la double ré-inversion pour les images imbriquées (ex: img dans picture) */
+html.dark-sudoku-on picture img,
+html.dark-sudoku-on iframe img {
+  filter: none !important;
+}
