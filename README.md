@@ -1,31 +1,31 @@
 # Dark Sudoku
 
-Extension Chrome (Manifest V3) qui ajoute un mode sombre à [sudoku.com](https://sudoku.com/fr).
+Chrome extension (Manifest V3) that adds a dark mode to [sudoku.com](https://sudoku.com/fr).
 
-## Comment ça marche
+## How it works
 
-La grille de sudoku.com est dessinée dans un `<canvas>`, donc du CSS classique ne peut pas
-recolorer les chiffres ni la grille. L'extension applique un filtre `invert(0.92) hue-rotate(180deg)`
-sur toute la page : le fond devient sombre, les chiffres deviennent clairs, et la rotation de teinte
-préserve les bleus du site. Les images et vidéos sont ré-inversées pour garder leurs couleurs normales.
+The sudoku.com grid is drawn in a `<canvas>`, so regular CSS can't recolor the digits or the
+grid. The extension applies an `invert(0.92) hue-rotate(180deg)` filter to the whole page: the
+background turns dark, the digits turn light, and the hue rotation preserves the site's blues.
+Images and videos are re-inverted to keep their normal colors.
 
 ## Installation
 
-1. Ouvrir `chrome://extensions` dans Chrome.
-2. Activer le **Mode développeur** (interrupteur en haut à droite).
-3. Cliquer sur **Charger l'extension non empaquetée** et sélectionner ce dossier.
-4. Aller sur [sudoku.com/fr](https://sudoku.com/fr) — le mode sombre est actif par défaut.
+1. Open `chrome://extensions` in Chrome.
+2. Enable **Developer mode** (toggle in the top right).
+3. Click **Load unpacked** and select this folder.
+4. Go to [sudoku.com/fr](https://sudoku.com/fr) — dark mode is on by default.
 
-## Utilisation
+## Usage
 
-Cliquer sur l'icône de l'extension dans la barre d'outils pour activer/désactiver le mode sombre.
-Un badge « OFF » s'affiche quand il est désactivé. Le réglage est synchronisé via votre compte
-Chrome (`chrome.storage.sync`) et s'applique instantanément à tous les onglets sudoku.com ouverts.
+Click the extension icon in the toolbar to toggle dark mode on/off. An "OFF" badge is shown
+when it's disabled. The setting is synced via your Chrome account (`chrome.storage.sync`) and
+applies instantly to all open sudoku.com tabs.
 
-## Fichiers
+## Files
 
-- `manifest.json` — manifeste MV3
-- `dark.css` — le filtre d'inversion, scopé sous la classe `dark-sudoku-on`
-- `content.js` — pose/retire la classe selon le réglage stocké
-- `background.js` — service worker : gère le clic sur l'icône et le badge
-- `icons/` — icônes générées (grille sombre avec case bleue)
+- `manifest.json` — MV3 manifest
+- `dark.css` — the inversion filter, scoped under the `dark-sudoku-on` class
+- `content.js` — adds/removes the class based on the stored setting
+- `background.js` — service worker: handles the icon click and badge
+- `icons/` — generated icons (dark grid with a blue cell)
